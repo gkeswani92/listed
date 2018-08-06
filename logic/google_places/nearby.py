@@ -1,6 +1,6 @@
 from googleplaces import GooglePlaces
 from config import GOOGLE_API_KEY
-from logic.nearby_util import address_to_latlng
+from util.nearby import address_to_latlng
 
 
 class NearbySearchGoogle(object):

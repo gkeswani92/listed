@@ -5,11 +5,9 @@ from flask import session
 from flask import redirect
 from flask import url_for
 
-from config import GOOGLE_NEARBY
 from forms.nearby import NearbySearchForm
-from logic.nearby_util import address_to_latlng
-from logic.wikipedia.nearby import NearbySearchWikipedia
 from logic.google_places.nearby import NearbySearchGoogle
+from util.nearby import address_to_latlng
 
 
 index_page = Blueprint('index', __name__, template_folder='templates')
@@ -41,17 +39,8 @@ def home():
         else:
             address = form.address.data
             keyword_search = form.keyword_search.data
-
-            # Use google nearby search if it is set to True in the config
-            if GOOGLE_NEARBY:
-                google_search = NearbySearchGoogle()
-                nearby_places = google_search.find_nearby_places(keyword_search, address)
-
-            # Else, fall back on wikipedia search
-            else:
-                my_coordinates = address_to_latlng(address)
-                nearby_places = NearbySearchWikipedia.find_nearby_places(address, my_coordinates)
-
+            google_search = NearbySearchGoogle()
+            nearby_places = google_search.find_nearby_places(keyword_search, address)
             return render_template('home.html', form=form, places=nearby_places)
 
     else:
