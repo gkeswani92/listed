@@ -2442,3 +2442,43 @@ In the future, we might start automatically compiling incompatible third-party m
 ## Something Missing?
 
 If you have ideas for more “How To” recipes that should be on this page, [let us know](https://github.com/facebookincubator/create-react-app/issues) or [contribute some!](https://github.com/facebookincubator/create-react-app/edit/master/packages/react-scripts/template/README.md)
+
+
+###Listed
+
+Listed is RESTful service written in Python/Flask with a React.js frontend to help you find interesting places near you using the Yelp Fusion API.
+
+[![Build Status](https://travis-ci.org/gkeswani92/Live_Review_Places.svg?branch=master)](https://travis-ci.org/gkeswani92/Live_Review_Places) [![Coverage Status](https://coveralls.io/repos/github/gkeswani92/Map_Nearby_Places/badge.svg)](https://coveralls.io/github/gkeswani92/Map_Nearby_Places)
+
+## Manual Installation
+
+### Clone the repository: 
+``` 
+git clone https://github.com/gkeswani92/Map_Nearby_Places.git 
+```
+
+### Install requirements.txt: 
+``` 
+sudo apt-get pip
+pip install requirements.txt 
+```
+
+### Run the server: 
+```
+python run.py
+```
+
+## Docker
+```
+# Deprecated after switching to docker-compose:
+docker build -t map_nearby_places .
+
+# Deprecated after switching to VOLUME from ADD: 
+docker run -ti -p 8000:8000 map_nearby_places python run.py
+
+# Deprecated after switching to docker-compose:
+docker run -ti -p 8000:8000 -v `pwd`:/code map_nearby_places python run.py
+
+docker-compose build
+docker-compose up
+```

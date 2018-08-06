@@ -1,0 +1,21 @@
+version: '2'
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres_listed
+
+  flask:
+    restart: always
+    build: .
+    container_name: flask_listed
+    ports:
+      - 8000:8000
+    command: bash -c "sleep 2; python run.py"
+    volumes:
+      - .:/code
+    links:
+      - postgres:postgres_listed
+
+networks:
+ esnet:
+   driver: bridge

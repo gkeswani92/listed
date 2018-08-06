@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <main class="hero-section">
+    <div class="container">
+
+    <br/>
+    <div class="nav">
+      <form method="POST" action="/home">
+        {{ form.hidden_tag() }}
+
+      <div class="form-group">
+          {% if form.keyword_search.errors %}
+            {% for error in form.keyword_search.errors %}
+              <p class="error-message">{{ error }}</p>
+            {% endfor %}
+          {% endif %}
+
+          {{ form.keyword_search(placeholder="What are you looking for?") }}
+
+        </div>
+
+        <div class="form-group">
+          {% if form.address.errors %}
+            {% for error in form.address.errors %}
+              <p class="error-message">{{ error }}</p>
+            {% endfor %}
+          {% endif %}
+
+          {{ form.address(placeholder="Where are you going?") }}
+
+        </div>
+
+        {{ form.submit(class="btn-primary") }}
+      </form>
+    </div>
+
+    <div class="section-tabs">
+        <div class="places">
+          {% for place in places %}
+            <article>
+              <a class="name" href="{{ place['url'] }}" target="_blank">{{ place['name'] }}</a>
+              <p> Rating: {{ place['rating'] }} </p>
+                <p> Price Level: {{ place['price_level'] }} </p>
+                <p> Phone: {{ place['phone'] }} </p>
+            </article>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="clearfix"></div>
+    </div>
+  </main>
+{% endblock %}
