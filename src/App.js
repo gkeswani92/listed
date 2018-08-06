@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import FeaturedCarousel from './FeaturedCarousel';
 import Header from './Header';
 import Search from './Search';
 
@@ -11,6 +12,7 @@ class App extends Component {
       <div className="App">
         <Header />
         <Search />
+        <FeaturedCarousel />
       </div>
     );
   }
