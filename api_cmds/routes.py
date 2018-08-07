@@ -13,17 +13,12 @@ from util.nearby import address_to_latlng
 
 
 index_page = Blueprint('index', __name__, template_folder='templates')
-about_page = Blueprint('about', __name__, template_folder='templates')
 home_page = Blueprint('home', __name__, template_folder='templates')
 
 
 @index_page.route('/')
 def index():
     return json.dumps({'text': 'Hello from Flask!'})
-
-@about_page.route('/about')
-def about():
-    return render_template('about.html')
 
 
 @home_page.route('/home', methods=['GET', 'POST'])

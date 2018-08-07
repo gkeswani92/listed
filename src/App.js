@@ -10,7 +10,7 @@ class App extends Component {
 
   componentDidMount() {
     console.log("App has mounted");
-    fetch('http://localhost:8000')
+    fetch('http://localhost:8000/search_suggest')
       .then((resp) => resp.json())
       .then(function(data) {
         // Here you get the data to modify as you please
