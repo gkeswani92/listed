@@ -14,7 +14,7 @@ class FeaturedBusiness extends React.Component {
                       <li><i className="fa fa-circle" aria-hidden="true"></i></li>
                       <li>{this.props.costScale}</li>
                       <li><i className="fa fa-circle" aria-hidden="true"></i></li>
-
+                      <li>{this.props.category}</li>
                   </ul>
                   <p className="card-text">{this.props.reviewSnippet}</p>
               </div>

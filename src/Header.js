@@ -1,11 +1,9 @@
 import React from 'react';
-import SearchBar from './SearchBar';
-import SearchTitle from './SearchTitle';
 
 class Header extends React.Component {
   render() {
     return (
-      <div classNameName="nav-menu sticky-top">
+      <div className="nav-menu sticky-top">
         <div className="bg transition">
             <div className="container-fluid fixed">
                 <div className="row">

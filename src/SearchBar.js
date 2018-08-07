@@ -20,7 +20,7 @@ class SearchBar extends React.Component {
                                 <div className="search-box2">
                                     <div className="search-box-title">
                                         <label>Where?</label><br />
-                                        <input type="text" name="#" className="search-form" placeholder="Eg:  Sanfransisco, United States" />
+                                        <input type="text" name="#" className="search-form" placeholder="Eg: San Francisco, CA" />
                                     </div>
                                 </div>
                             </div>
