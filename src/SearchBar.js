@@ -18,18 +18,23 @@ class SearchBar extends React.Component {
   }
 
   handleSearchTextInput(e) {
-    this.setState({
-      'searchText': e.target.value,
-    });
+    let userInput = e.target.value;
 
-    let queryParams = {'text': this.state.searchText};
-    let encodedQueryParams = this.encodeQueryData(queryParams);
-    fetch('http://localhost:8000/search_suggest?'+encodedQueryParams)
-      .then((resp) => resp.json())
-      .then(function(data) {
-        // Here you get the data to modify as you please
-        console.log(data);
-      });
+    // Handling rate limiting calls to the backend in a hacky way by limiting
+    // it to when the user input is a multiple of 3 characters
+    if(userInput && userInput.length % 3 == 0) {
+      let queryParams = {'text': userInput};
+      let encodedQueryParams = this.encodeQueryData(queryParams);
+      fetch('http://localhost:8000/search_suggest?'+encodedQueryParams)
+        .then((resp) => resp.json())
+        .then(function(data) {
+          console.log(data);
+        });
+    }
+
+    this.setState({
+      'searchText': userInput,
+    });
   }
 
   render() {
