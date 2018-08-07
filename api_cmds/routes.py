@@ -1,3 +1,5 @@
+import json
+
 from flask import Blueprint
 from flask import render_template
 from flask import request
@@ -17,8 +19,7 @@ home_page = Blueprint('home', __name__, template_folder='templates')
 
 @index_page.route('/')
 def index():
-    return render_template('index.html')
-
+    return json.dumps({'text': 'Hello from Flask!'})
 
 @about_page.route('/about')
 def about():
