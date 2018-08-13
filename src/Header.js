@@ -1,6 +1,14 @@
 import React from 'react';
+import Login from './Login';
 
 class Header extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      'showLoginModal': false,
+    }
+  }
+
   render() {
     return (
       <div className="nav-menu sticky-top">
@@ -19,11 +27,7 @@ class Header extends React.Component {
                               aria-label="Toggle navigation">
                                 <span className="ti-menu"></span>
                             </button>
-                            <div className="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
-                                <ul className="navbar-nav">
-                                    <li><a href="index.html" className="btn btn-outline-danger top-btn"> Login </a></li>
-                                </ul>
-                            </div>
+                            <Login />
                         </nav>
                     </div>
                 </div>

@@ -5,9 +5,7 @@ db = SQLAlchemyService().get_instance()
 
 
 def is_valid_user(email, password):
-    """
-    Creates a new user with the passed in data and saves it to the database
-    """
+    """Verify if a user exists with the give email address and password"""
     try:
         user_details = db.session.query(
             User
@@ -17,12 +15,11 @@ def is_valid_user(email, password):
 
         if user_details:
             if user_details.check_password(password):
-                return True, "Successfully signed in"
+                return (True, "Successfully signed in")
             else:
-                return False, "Invalid password"
-
-        return False, "Email ID does not exist"
-
+                return (False, "Invalid password")
+        else:
+            return (False, "Email ID does not exist")
     except Exception as e:
         db.session.rollback()
-        return e.message
+        return (False, str(e.message))

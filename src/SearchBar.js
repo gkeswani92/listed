@@ -22,7 +22,7 @@ class SearchBar extends React.Component {
 
     // Handling rate limiting calls to the backend in a hacky way by limiting
     // it to when the user input is a multiple of 3 characters
-    if(userInput && userInput.length % 3 == 0) {
+    if(userInput && userInput.length % 3 === 0) {
       let queryParams = {'text': userInput};
       let encodedQueryParams = this.encodeQueryData(queryParams);
       fetch('http://localhost:8000/search_suggest?'+encodedQueryParams)

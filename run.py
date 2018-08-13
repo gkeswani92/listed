@@ -4,7 +4,6 @@ from models.database_setup import SQLAlchemyService
 from api_cmds.routes import home_page
 from api_cmds.routes import index_page
 from api_cmds.registration import login_page
-from api_cmds.registration import sign_out_page
 from api_cmds.registration import sign_up_page
 from api_cmds.search import search_suggest_page
 
@@ -18,7 +17,6 @@ SQLAlchemyService().initialize_db(app)
 # Register blueprint for all pages
 app.register_blueprint(index_page)
 app.register_blueprint(sign_up_page)
-app.register_blueprint(sign_out_page)
 app.register_blueprint(home_page)
 app.register_blueprint(login_page)
 app.register_blueprint(search_suggest_page)
