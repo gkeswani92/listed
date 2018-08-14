@@ -9,7 +9,7 @@ class Login extends React.Component {
         'loggedIn': false,
         'username': '',
         'modalIsOpen': false,
-        'text': 'Login'
+        'text': 'Sign In'
       }
       this.handleClick = this.handleClick.bind(this);
       this.handleClose = this.handleClose.bind(this);
@@ -34,13 +34,12 @@ class Login extends React.Component {
     this.setState({
       'username': name,
       'modalIsOpen': false,
-      'text': 'Welcome ' + name,
+      'text': 'Sign Out',
       'loggedIn': true
     });
   }
 
   render() {
-    console.log(this.state.modalIsOpen);
     return (
       <div className="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
           <ul className="navbar-nav">
