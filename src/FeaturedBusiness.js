@@ -3,7 +3,6 @@ import React from 'react';
 import CardBody from './CardBody';
 import CardBottom from './CardBottom';
 import CardImage from './CardImage';
-import CardText from './CardText';
 
 const FeaturedBusiness = (props) => {
     return (

@@ -1,5 +1,4 @@
 import React from 'react';
-import Autocomplete from 'react-autocomplete';
 
 class SearchBar extends React.Component {
   constructor(props) {
@@ -40,7 +39,7 @@ class SearchBar extends React.Component {
 
   render() {
     return (
-      <div className="row">
+        <div className="row">
             <div className="col-md-12">
                 <form>
                     <div className="search-box">
@@ -49,33 +48,28 @@ class SearchBar extends React.Component {
                                 <div className="search-box1">
                                     <div className="search-box-title">
                                         <label>What?</label><br />
-                                        <Autocomplete wrapperStyle={{'border': 'None'}}
-                                                      className="search-form"
-                                        >
-                                          <input type="text"
-                                                 name="#"
-                                                 className="search-form"
-                                                 placeholder="Eg: restaurant, spa, shopping"
-                                                 onChange={this.handleSearchTextInput}
-                                          />
-                                        </Autocomplete>
+                                        <input type="text"
+                                                name="#"
+                                                className="search-form"
+                                                placeholder="Eg: restaurant, spa, shopping"
+                                                onChange={this.handleSearchTextInput}
+                                        />
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-md-6">
-                                <div className="search-box2">
-                                    <div className="search-box-title">
-                                        <label>Where?</label><br />
-                                        <input type="text" name="#" className="search-form" placeholder="Eg: San Francisco, CA" />
-                                    </div>
+                            <div className="col-md-6 search-box2">
+                                <div className="search-box-title">
+                                    <label>Where?</label><br />
+                                    <input type="text" name="#" className="search-form" placeholder="Eg: San Francisco, CA" />
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="btn-search">
+                    <div className="btn-search" style={{}}>
                         <a href="#" className="btn btn-simple">Search →</a>
                     </div>
                 </form>
+                <p className="search-bottom-title">By using this website, you are agreeing to our <a href="#"> terms and conditions</a></p>
             </div>
         </div>
     );

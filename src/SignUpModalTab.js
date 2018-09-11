@@ -1,6 +1,6 @@
 import React from 'react';
 
-class LoginModalTab extends React.Component {
+class SignUpModalTab extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -19,7 +19,7 @@ class LoginModalTab extends React.Component {
       'username': this.state.username,
       'password': this.state.password,
     };
-    fetch('http://localhost:8000/login', {
+    fetch('http://localhost:8000/signup', {
       method: 'POST',
       body: JSON.stringify(data),
       headers: {
@@ -49,7 +49,7 @@ class LoginModalTab extends React.Component {
   render() {
     return (
       <div className="tab-content" id="pills-tabContent">
-        <div className="tab-pane fade show active" id="pills-home" role="tabpanel">
+        <div className="tab-pane fade show active" id="pills-profile" role="tabpanel">
           <div className="modal-header">
             <h5 className="modal-title"><img src="images/logo.png" alt="logo" /></h5>
             <button type="button" className="close" data-dismiss="modal" onClick={this.props.handleClose}>
@@ -57,7 +57,7 @@ class LoginModalTab extends React.Component {
             </button>
           </div>
 
-          {/* Login Form */}
+          {/* Signup Form */}
           <div className="modal-body">
             <form onSubmit={this.handleSubmit}>
               <div className="form-group">
@@ -78,14 +78,15 @@ class LoginModalTab extends React.Component {
                 <input
                   type="submit"
                   className="btn btn-primary"
-                  value="Login" />
+                  value="Sign Up" />
               </div>
             </form>
           </div>
+
         </div>
       </div>
     );
   }
 }
 
-export default LoginModalTab;
+export default SignUpModalTab;

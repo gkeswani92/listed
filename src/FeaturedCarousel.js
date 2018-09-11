@@ -8,6 +8,7 @@ class FeaturedCarousel extends React.Component {
     this.state = {
       featured_businesses: [
         {
+          id: 1,
           title: "Golden Boy Pizza",
           rating: 4.5,
           imageURL: "https://s3-media1.fl.yelpcdn.com/bphoto/F8OxoXdS51h2VfU9Je2cNQ/o.jpg",
@@ -19,9 +20,10 @@ class FeaturedCarousel extends React.Component {
           isOpen: true,
         }, 
         {
+          id: 2,
           title: "The Bird",
           rating: 4.1,
-          imageURL: "https://s3-media1.fl.yelpcdn.com/bphoto/F8OxoXdS51h2VfU9Je2cNQ/o.jpg",
+          imageURL: "https://s3-media1.fl.yelpcdn.com/bphoto/swsVh8zitzh6gipKB4zaUA/o.jpg",
           numRatings: 972,
           costScale: "$$",
           category: "Sandwiches",
@@ -30,6 +32,7 @@ class FeaturedCarousel extends React.Component {
           isOpen: true,
         }, 
         {
+          id: 3,
           title: "Bi-Rite Creamery",
           rating: 4.5,
           imageURL: "https://s3-media2.fl.yelpcdn.com/bphoto/orW7CXAlnSwOFcXZ2kB-lg/o.jpg",
@@ -60,6 +63,7 @@ class FeaturedCarousel extends React.Component {
                     return (
                       <FeaturedBusiness
                         className="col"
+                        key={featured_business.id}
                         title={featured_business.title}
                         rating={featured_business.rating}
                         imgURL={featured_business.imageURL}
