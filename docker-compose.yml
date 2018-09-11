@@ -15,7 +15,3 @@ services:
       - .:/code
     links:
       - postgres:postgres_listed
-
-networks:
- esnet:
-   driver: bridge

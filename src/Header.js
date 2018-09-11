@@ -1,6 +1,8 @@
 import React from 'react';
 import Login from './Login';
 
+import { Router, Route, Link } from 'react-router-dom';
+
 class Header extends React.Component {
   constructor(props){
     super(props);
@@ -17,10 +19,13 @@ class Header extends React.Component {
                 <div className="row">
                     <div className="col-md-12">
                         <nav className="navbar navbar-expand-lg">
-                            <a className="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo" /></a>
+                            <a className="navbar-brand" href="index.html">
+                              <img src="images/logo.png" alt="Listed" />
+                            </a>
                             <button
                               className="navbar-toggler"
-                              type="button" data-toggle="collapse"
+                              type="button" 
+                              data-toggle="collapse"
                               data-target="#navbarNavDropdown"
                               aria-controls="navbarNavDropdown"
                               aria-expanded="false"

@@ -1,4 +1,5 @@
 import React from 'react';
+import Autocomplete from 'react-autocomplete';
 
 class SearchBar extends React.Component {
   constructor(props) {
@@ -48,7 +49,16 @@ class SearchBar extends React.Component {
                                 <div className="search-box1">
                                     <div className="search-box-title">
                                         <label>What?</label><br />
-                                        <input type="text" name="#" className="search-form" placeholder="Eg: restaurant, spa, shopping" onChange={this.handleSearchTextInput}/>
+                                        <Autocomplete wrapperStyle={{'border': 'None'}}
+                                                      className="search-form"
+                                        >
+                                          <input type="text"
+                                                 name="#"
+                                                 className="search-form"
+                                                 placeholder="Eg: restaurant, spa, shopping"
+                                                 onChange={this.handleSearchTextInput}
+                                          />
+                                        </Autocomplete>
                                     </div>
                                 </div>
                             </div>
