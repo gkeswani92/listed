@@ -14,3 +14,8 @@ This is a screenshot of how the website looks as of today:
 
 
 ![alt text](https://raw.githubusercontent.com/gkeswani92/listed/master/public/images/v1.png)
+
+
+It uses React-Router to route the user to a 404 page if they try to access an invalid URL:
+
+![alt text](https://raw.githubusercontent.com/gkeswani92/listed/master/public/images/404_page.png)
