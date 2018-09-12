@@ -1,5 +1,8 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
+
+
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
@@ -66,7 +69,7 @@ class SearchBar extends React.Component {
                         </div>
                     </div>
                     <div className="btn-search" style={{}}>
-                        <a href="#" className="btn btn-simple">Search →</a>
+                        <Link to="/listings" className="btn btn-simple">Search →</Link>
                     </div>
                 </form>
                 <p className="search-bottom-title">By using this website, you are agreeing to our <a href="#"> terms and conditions</a></p>
